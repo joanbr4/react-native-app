@@ -1,6 +1,6 @@
 // import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import {Button, StyleSheet, Text, TextInput, View} from 'react-native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {NavigationContainer} from '@react-navigation/native';
 import HomeScreen from './src/HomeScreen';
@@ -19,9 +19,19 @@ const Welcome = ({navigation}) => {
   return (
     <>
       <View style={styles.container}>
-        <Text>Welcome to my liiittle app using only React-Native Apps</Text>
+        <Text>Teleker</Text>
         <View style={styles.buttonContainer}>
           <View style={styles.button}>
+            <TextInput
+              style={styles.input}
+              placeholder="Usuario"
+              defaultValue="4834453"
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Contraseña"
+              defaultValue="******"
+            />
             <Button
               title="Entrar"
               onPress={() => navigation.navigate('Home')}
@@ -56,14 +66,20 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    // flexDirection: 'row',
+    // justifyContent: 'space-between',
     marginTop: 10,
   },
   button: {
     borderRadius: 10,
     paddingHorizontal: 10,
     marginHorizontal: 20,
+  },
+  input: {
+    borderBottomWidth: 1,
+    borderRadius: 4,
+    paddingHorizontal: 40,
+    marginVertical: 10,
   },
 });
 
